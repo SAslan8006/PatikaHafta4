@@ -5,3 +5,6 @@
 
 ### Kullanılan Api
 1. https://dummyjson.com/products?limit=100 
+
+### Yapılanlar
+1. Api klasörü axios'a göre düzenlendi.
