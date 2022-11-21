@@ -10,10 +10,22 @@ export default StyleSheet.create({
          borderRadius:8,
         },
     body_container: { 
-        width: '70%', marginVertical: spacing.xs, 
+        width: '70%',
+        marginVertical: spacing.xs, 
+        alignItems: 'center', 
+        borderRadius: 8,
+
     },
     text_input: { 
         margin: spacing.xxs 
     },
+    logo:{
+        alignSelf: 'center',
+        resizeMode: 'contain',  
+        alignItems: 'center', 
+        borderRadius: 100,
+        marginVertical: spacing.xs, 
+
+    }
     
 });

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { Text, View, Image, TouchableOpacity } from 'react-native';
 
 import { connect } from 'react-redux';
 
@@ -20,6 +20,7 @@ const Login = connect(
     return (
         <View style={styles.container}>
             <View style={styles.body_container}>
+                <Image source={require('~/assets/logo.png') } style={styles.logo} />
                 <Input 
                     placeholder="e-mail"
                     keyboardType="email-address"
