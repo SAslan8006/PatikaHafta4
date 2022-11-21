@@ -8,10 +8,6 @@ export default StyleSheet.create({
          alignItems: 'center', 
         },
     body_container: { 
-        width: '70%', marginVertical: spacing.xs 
-    },
-    text_input: { 
-        margin: spacing.xxs 
-    },
-    
+        width: '70%', marginVertical: spacing.s 
+    }
 });
