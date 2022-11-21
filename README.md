@@ -1,5 +1,5 @@
 # PatikaHafta4
-##Yapılacaklar
+## Yapılacaklar
 1. Firebase kullanıcı mail girişi olacak
 2. Firebase Auth takibi hatırlaması
 
@@ -8,4 +8,4 @@
 
 ### Yapılanlar
 1. Api klasörü axios'a göre düzenlendi.
-2. 
+2. Deneme
