@@ -84,3 +84,21 @@ export const requestAllProducts = payload => async (dispatch, getState) => {
   } else {
   }
 };
+export const logoutUserWithFB = payload => async (dispatch, getState) => {
+  //async işlemlerin yapılacağı yer
+  const { username, password } = getState().app;
+
+  dispatch({ type: constants.SET_APP, key: 'loginLoading', value: true });
+
+  const { data, status, success } = await auth.signOut();
+
+  dispatch({ type: constants.SET_APP, key: 'loginLoading', value: false });
+
+  if (success) {
+    dispatch({
+      type: constants.REQUEST_LOGOUT_USER_WITH_FB,
+      payload: {},
+    });
+  } else {
+  }
+};

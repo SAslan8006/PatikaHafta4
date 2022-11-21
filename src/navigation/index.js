@@ -17,7 +17,7 @@ const Navigation = connect(
     });
   }, []);
   return useMemo(
-    () => <NavigationContainer>{userSession ? <MainStack /> : <LoginStack />}</NavigationContainer>,
+    () => <NavigationContainer>{!userSession ? <MainStack /> : <LoginStack />}</NavigationContainer>,
     [props.app.loginStatus],
   );
 });
