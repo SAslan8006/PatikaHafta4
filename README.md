@@ -8,3 +8,4 @@
 
 ### Yapılanlar
 1. Api klasörü axios'a göre düzenlendi.
+2. 
