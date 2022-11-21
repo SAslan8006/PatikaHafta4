@@ -3,17 +3,14 @@ import { Text, View, TextInput, TouchableOpacity } from 'react-native';
 
 import { connect } from 'react-redux';
 
-import { spacing } from '~/configs';
 import { createUserWithFB, loginUserWithFB, requestLogin, setApp } from '~/redux/actions';
 import styles from './styles';
 import Input from '~/components/Input';
 import Button from '~/components/Button';
 
-// const mapStateToProps = ({ app }) => ({ app });
 const mapStateToProps = states => ({ app: states.app });
 
 const mapDispatchToProps = dispatch => ({ dispatch });
-//const mapDispatchToProps = asdasdasd => ({ dispatch: asdasdasd });
 
 const Login = connect(
     mapStateToProps,
@@ -24,52 +21,20 @@ const Login = connect(
         <View style={styles.container}>
             <View style={styles.body_container}>
                 <Input 
-                    placeholder="email address giriniz"
+                    placeholder="e-mail"
                     keyboardType="email-address"
                     value={app.username}
                     onChangeText={d => dispatch(setApp('username', d))}
                 />
-                <Input                    
-                    secureTextEntry
+                <Input    
+                    placeholder="password"                
+                    isSecure
                     value={app.password}
                     onChangeText={d => dispatch(setApp('password', d))}
                 />
             </View>
-            <Button text="Login" onPress={() => dispatch(requestLogin())} />
-            <Button text="Sign In" onPress={() => dispatch(requestLogin())} />
-
-
-            <TouchableOpacity
-                style={{
-                    width: '25%',
-                    paddingVertical: spacing.s,
-                    borderTopLeftRadius: 4,
-                    borderTopRightRadius: 4,
-                    borderBottomLeftRadius: 8,
-                    borderBottomRightRadius: 8,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    backgroundColor: '#00000033',
-                }}
-                onPress={() => dispatch(createUserWithFB())}>
-                <Text>Create With FB</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity
-                style={{
-                    width: '25%',
-                    paddingVertical: spacing.s,
-                    borderTopLeftRadius: 4,
-                    borderTopRightRadius: 4,
-                    borderBottomLeftRadius: 8,
-                    borderBottomRightRadius: 8,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    backgroundColor: '#00000033',
-                }}
-                onPress={() => dispatch(loginUserWithFB())}>
-                <Text>Login With FB</Text>
-            </TouchableOpacity>
+            <Button text="Login" onPress={() => dispatch(loginUserWithFB())} />
+            <Button text="Sign In" onPress={() => dispatch(createUserWithFB())} />
 
             {app.loginLoading && <Text>LOADING LOADING</Text>}
         </View>

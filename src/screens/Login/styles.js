@@ -6,9 +6,11 @@ export default StyleSheet.create({
          flex: 1,
          justifyContent: 'center',
          alignItems: 'center', 
+         borderColor:'gray',
+         borderRadius:8,
         },
     body_container: { 
-        width: '70%', marginVertical: spacing.xs 
+        width: '70%', marginVertical: spacing.xs, 
     },
     text_input: { 
         margin: spacing.xxs 

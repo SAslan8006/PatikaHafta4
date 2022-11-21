@@ -2,8 +2,8 @@ import * as constants from '~/redux/constants';
 
 const initialState = {
   defaultParameter: false,
-  username: 'atuny0',
-  password: '9uQFF1Lh',
+  username: '',
+  password: '',
 
   userInfo: {},
 

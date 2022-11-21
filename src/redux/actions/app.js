@@ -12,17 +12,6 @@ export const defaultAction = payload => {
 
 export const setApp = (key, value) => ({ type: constants.SET_APP, key, value });
 
-// export const requestLogin = payload => {
-//   return async () => {
-//     //async işlemlerin yapılacağı yer
-
-//     return {
-//       type: constants.REQUEST_LOGIN,
-//       payload,
-//     };
-//   };
-// };
-
 export const requestLogin = payload => async (dispatch, getState) => {
   //async işlemlerin yapılacağı yer
   const { username, password } = getState().app;
