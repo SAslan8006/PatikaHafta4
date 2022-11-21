@@ -7,5 +7,7 @@ export default StyleSheet.create({
          justifyContent: 'center',
          alignItems: 'center', 
         },
-    body_container: { width: '70%', marginVertical: spacing.s }
+    body_container: { 
+        width: '70%', marginVertical: spacing.s 
+    }
 });
