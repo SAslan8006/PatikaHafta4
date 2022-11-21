@@ -1,13 +1,22 @@
 import { StyleSheet } from "react-native";
-import colors from "../../styles/colors";
+import { spacing } from "~/configs";
+import colors from "~/themes/colors";
 
 //base stylemiz
 const base_style = StyleSheet.create({
     container: {
         padding: 8,
-        margin: 10,
+        margin: spacing.s/2,
         borderRadius: 5,
         alignItems: "center",
+        width: '25%',
+        paddingVertical: spacing.s,
+        borderTopLeftRadius: spacing.s/2,
+        borderTopRightRadius: spacing.s/2,
+        borderBottomLeftRadius: spacing.s,
+        borderBottomRightRadius: spacing.s,
+        justifyContent: 'center',
+        backgroundColor: '#00000033',
         
     },
     button_container:{
@@ -28,7 +37,7 @@ export default {
     primary: StyleSheet.create({
         container: {
             ...base_style.container,
-            backgroundColor: colors.darkgreen,
+            backgroundColor: colors.black,
         },
         title: {
             ...base_style.title,
@@ -41,11 +50,11 @@ export default {
             ...base_style.container,
             backgroundColor: "white",
             borderWidth:1,
-            borderColor:colors.darkgreen,            
+            borderColor:colors.black,            
         },       
         title: {
             ...base_style.title,
-            color: colors.darkgreen,
+            color: colors.black,
         }
     })
 }

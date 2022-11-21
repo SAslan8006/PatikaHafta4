@@ -1,4 +1,5 @@
 export default {
-  black: 'black',
+  black: 'gray',
   whihe: 'white',
+  
 };

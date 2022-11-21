@@ -7,6 +7,7 @@ import { spacing } from '~/configs';
 import { createUserWithFB, loginUserWithFB, requestLogin, setApp } from '~/redux/actions';
 import styles from './styles';
 import Input from '~/components/Input';
+import Button from '~/components/Button';
 
 // const mapStateToProps = ({ app }) => ({ app });
 const mapStateToProps = states => ({ app: states.app });
@@ -34,22 +35,9 @@ const Login = connect(
                     onChangeText={d => dispatch(setApp('password', d))}
                 />
             </View>
+            <Button text="Login" onPress={() => dispatch(requestLogin())} />
+            <Button text="Sign In" onPress={() => dispatch(requestLogin())} />
 
-            <TouchableOpacity
-                style={{
-                    width: '25%',
-                    paddingVertical: spacing.s,
-                    borderTopLeftRadius: 4,
-                    borderTopRightRadius: 4,
-                    borderBottomLeftRadius: 8,
-                    borderBottomRightRadius: 8,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    backgroundColor: '#00000033',
-                }}
-                onPress={() => dispatch(requestLogin())}>
-                <Text>Login</Text>
-            </TouchableOpacity>
 
             <TouchableOpacity
                 style={{
