@@ -2,6 +2,7 @@ import * as constants from '~/redux/constants';
 
 import * as auth from '~/api/auth';
 import * as products from '~/api/products';
+import { showMessage, hideMessage } from "react-native-flash-message";
 
 export const defaultAction = payload => {
   return {
@@ -50,8 +51,9 @@ export const loginUserWithFB = payload => async (dispatch, getState) => {
   if (success) {
     dispatch({
       type: constants.REQUEST_LOGIN_USER_WITH_FB,
-      payload: {},
+      payload: {},      
     });
+    showMessage({ message: "Başarılı bir şekilde giriş yapılmıştır", type: 'success' });
   } else {
   }
 };
@@ -70,6 +72,8 @@ export const createUserWithFB = payload => async (dispatch, getState) => {
       type: constants.REQUEST_CREATE_USER_WITH_FB,
       payload: {},
     });
+    showMessage({ message: "Başarılı bir şekilde kullanıcı oluşturulmuştur", type: 'success' });
+
   } else {
   }
 };
@@ -97,6 +101,7 @@ export const logoutUserWithFB = payload => async (dispatch, getState) => {
       type: constants.REQUEST_LOGOUT_USER_WITH_FB,
       payload: {},
     });
+    showMessage({ message: "Başarılı bir şekilde oturum kapatılmıştır", type: 'danger' });
   } else {
   }
 };
