@@ -49,7 +49,7 @@ export const loginUserWithFB = payload => async (dispatch, getState) => {
 
   if (success) {
     dispatch({
-      type: constants.REQUEST_CREATE_USER_WITH_FB,
+      type: constants.REQUEST_LOGIN_USER_WITH_FB,
       payload: {},
     });
   } else {
@@ -85,12 +85,10 @@ export const requestAllProducts = payload => async (dispatch, getState) => {
   }
 };
 export const logoutUserWithFB = payload => async (dispatch, getState) => {
-  //async işlemlerin yapılacağı yer
-  const { username, password } = getState().app;
 
   dispatch({ type: constants.SET_APP, key: 'loginLoading', value: true });
 
-  const { data, status, success } = await auth.signOut();
+  const { data, status, success } = await auth.logout();
 
   dispatch({ type: constants.SET_APP, key: 'loginLoading', value: false });
 

@@ -3,19 +3,17 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Home from '~/screens/Home';
 import { connect } from 'react-redux';
-
-import auth from '@react-native-firebase/auth';
-const mapStateToProps = states => ({ app: states.app });
+import { logoutUserWithFB, setApp } from '~/redux/actions';
 
 const mapDispatchToProps = dispatch => ({ dispatch });
 
 const Stack = createStackNavigator();
 
 const MainStack = connect(
-  mapStateToProps,
   mapDispatchToProps,
 )(props => {
   const { dispatch, app } = props;
+ 
   return (
     <Stack.Navigator>
       <Stack.Screen

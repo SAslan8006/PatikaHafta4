@@ -61,3 +61,14 @@ export const loginUserWithFB = async (email, password) => {
 
   return { data: null, status: 500, success: false };
 };
+export const logout= async () => {
+  try {
+    const response = await auth().signOut();
+
+    return { data: null, status: 200, success: true };
+  } catch (error) {
+    console.error(error);
+  }
+
+  return { data: null, status: 500, success: false };
+};

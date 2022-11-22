@@ -19,10 +19,12 @@ const app = (state = initialState, actionObj) => {
     case constants.SET_APP: {
       return { ...state, [actionObj.key]: actionObj.value };
     }
-    case constants.REQUEST_LOGIN: {
+    case constants.REQUEST_LOGIN_USER_WITH_FB: {
       return { ...state, password: undefined, userInfo: actionObj.payload.userInfo, loginStatus: true };
     }
-
+    case constants.REQUEST_LOGOUT_USER_WITH_FB: {
+      return { ...state, password: undefined, userInfo: null, loginStatus: false };
+    }
     default:
       return state;
   }

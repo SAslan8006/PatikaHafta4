@@ -10,14 +10,8 @@ const Navigation = connect(
   ({ app }) => ({ app }),
   undefined,
 )(props => {
-  const [userSession, setUserSession] = useState(false);
-  useEffect(() => {
-    auth().onAuthStateChanged(user => {
-      setUserSession(!!user);
-    });
-  }, []);
   return useMemo(
-    () => <NavigationContainer>{!userSession ? <MainStack /> : <LoginStack />}</NavigationContainer>,
+    () => <NavigationContainer>{props.app.loginStatus ? <MainStack /> : <LoginStack />}</NavigationContainer>,
     [props.app.loginStatus],
   );
 });
