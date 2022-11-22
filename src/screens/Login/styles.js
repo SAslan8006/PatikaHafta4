@@ -14,6 +14,7 @@ export default StyleSheet.create({
         marginVertical: spacing.xs, 
         alignItems: 'center', 
         borderRadius: 8,
+        
 
     },
     text_input: { 

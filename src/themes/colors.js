@@ -1,5 +1,5 @@
 export default {
   black: 'gray',
-  whihe: 'white',
+  white: 'white',
   
 };
