@@ -35,7 +35,7 @@ const Login = connect(
                 />
             </View>
             <Button text="Login" onPress={() => dispatch(loginUserWithFB())} />
-            <Button text="Sign In" onPress={() => dispatch(createUserWithFB())} />
+            <Button text="Sign Up" onPress={() => dispatch(createUserWithFB())} />
 
             {app.loginLoading && <Text>LOADING LOADING</Text>}
         </View>
