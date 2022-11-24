@@ -25,6 +25,9 @@ const app = (state = initialState, actionObj) => {
     case constants.REQUEST_LOGOUT_USER_WITH_FB: {
       return { ...state, password: undefined, userInfo: null, loginStatus: false };
     }
+    case constants.REQUEST_GET_ALL_PRODUCTS: {
+      return { ...state, products: actionObj.payload.products };
+    }
     default:
       return state;
   }

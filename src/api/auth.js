@@ -1,7 +1,7 @@
 import auth from '@react-native-firebase/auth';
 
 import endpoints, { baseurl } from '~/api/endpoints';
-import { showMessage, hideMessage } from "react-native-flash-message";
+import { showMessage } from "react-native-flash-message";
 import authErrorMessageParse from '~/utils/authErrorMessageParser';
 import { post } from './service';
 

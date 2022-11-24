@@ -3,7 +3,7 @@ import { Text, View, Image, TouchableOpacity } from 'react-native';
 
 import { connect } from 'react-redux';
 
-import { createUserWithFB, loginUserWithFB, setApp } from '~/redux/actions';
+import { createUserWithFB, loginUserWithFB, setApp } from '~/redux/actions/app';
 import styles from './styles';
 import Input from '~/components/Input';
 import Button from '~/components/Button';
