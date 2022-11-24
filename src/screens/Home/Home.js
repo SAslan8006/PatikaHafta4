@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Text, View } from 'react-native';
-
 import { connect } from 'react-redux';
+import useFetch from '~/api/hooks/useFetch';
 
 import { requestAllProducts } from '~/redux/actions';
 
