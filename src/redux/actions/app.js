@@ -4,12 +4,6 @@ import * as auth from '~/api/auth';
 import * as products from '~/api/products';
 import { showMessage, hideMessage } from "react-native-flash-message";
 
-export const defaultAction = payload => {
-  return {
-    type: constants.DEFAULT_ACTION,
-    payload,
-  };
-};
 
 export const setApp = (key, value) => ({ type: constants.SET_APP, key, value });
 

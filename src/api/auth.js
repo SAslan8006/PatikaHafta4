@@ -3,17 +3,7 @@ import auth from '@react-native-firebase/auth';
 import endpoints, { baseurl } from '~/api/endpoints';
 import { showMessage } from "react-native-flash-message";
 import authErrorMessageParse from '~/utils/authErrorMessageParser';
-import { post } from './service';
 
-export const login = async (username, password) => {
-  let responseObj = await post(endpoints.login, JSON.stringify({ username, password }));
-
-  if (responseObj.success) {
-    global.token = responseObj.data.token;
-  }
-
-  return responseObj;
-};
 
 export const createUserWithFB = async (email, password) => {
   if (password == "" || email=="" ) {

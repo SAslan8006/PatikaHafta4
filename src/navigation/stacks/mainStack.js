@@ -16,21 +16,10 @@ const MainStack = connect(
 
   return (
     <Stack.Navigator>
-      <Stack.Screen
-        name="Home"
-        options={{
-          headerShown: true,
-          title: 'Home',
-          headerTitleAlign: 'center',
-          headerRight: () => (
-            <Icon
-              name="logout"
-              size={28}
-              onPress={() => dispatch(logoutUserWithFB())}
-            />
-          ),
-        }}
-        component={Home}
+      <Stack.Screen name="Home" options={{
+        headerShown: true, title: 'Home', headerTitleAlign: 'center', headerRight: () => (
+          <Icon name="logout" size={28} onPress={() => dispatch(logoutUserWithFB())} />),
+      }} component={Home}
       />
     </Stack.Navigator>
   );
