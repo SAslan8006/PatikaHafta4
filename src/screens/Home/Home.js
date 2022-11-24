@@ -1,6 +1,5 @@
-import React from 'react';
 import { useEffect } from 'react';
-import { Text, View ,FlatList} from 'react-native';
+import { Text, View } from 'react-native';
 
 import { connect } from 'react-redux';
 
@@ -20,11 +19,19 @@ const Home = connect(
         dispatch(requestAllProducts());
     }, []);
 
+    const { data, loading } = useFetch("https://dummyjson.com/products?limit=100");
+    const { data2, loading2 } = useFetch("https://dummyjson.com/products/categories")
+    /* console.log(data2) */
+    const renderProducts = ({ item }) => <ProductCards products={item} />
+
     return (
         <View>
-            <Text>HOME</Text>
+            <FlatList
+                data={data2}
+                renderItem={renderProducts}
+            />
         </View>
     );
 });
 
-export default  Home;
+export default Home;
