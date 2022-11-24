@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { Text, View } from 'react-native';
+import React, { useEffect } from 'react';
+import { Text, View,FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import useFetch from '~/api/hooks/useFetch';
 
@@ -25,10 +25,22 @@ const Home = connect(
     const renderProducts = ({ item }) => <ProductCards products={item} />
 
     return (
-        <View>
+        <View style={{ flex: 1, borderWidth: 1, borderColor: 'red' }}>
+            {/* <Button
+          title="GET PRODUCTS"
+          onPress={() => dispatch(requestAllProducts())}
+        /> */}
+
             <FlatList
-                data={data2}
-                renderItem={renderProducts}
+                data={products.products}
+                keyExtractor={item => item.id}
+                renderItem={({ item }) => {
+                    return (
+                        <View>
+                            <Text>{item.title}</Text>
+                        </View>
+                    );
+                }}
             />
         </View>
     );
