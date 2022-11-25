@@ -1,13 +1,15 @@
-import { FlatList, Image, Text, View } from 'react-native';
+import React from 'react';
+import { FlatList,Dimensions ,Image, Text, View } from 'react-native';
 
 const DetailCards = ({ product }) => {
     const data = product.images;
-
+    const height = Dimensions.get("window").height/3;
+    const width = Dimensions.get("window").width*0.9;
     const priceWD = Math.round(product.price * (100 / (100 - product.discountPercentage)));
     const renderImages = (item) => {
         return (
             < View>
-                {<Image style={{ width: 200, height: 200, marginLeft: 10, borderRadius: 10 }} source={{ uri: item.item }} />}
+                {<Image style={{ width: width, height: height, marginLeft: 10, borderRadius: 10, resizeMode: "contain" }} source={{ uri: item.item }} />}
             </View >
         )
     }
