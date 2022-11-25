@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Text, View, Button, TextInput, FlatList, Image, TouchableOpacity, } from 'react-native';
 
 import { connect } from 'react-redux';
-
+import ProductCards from '~/components/Card/ProductCards';
 import { requestAllProducts } from '~/redux/actions/apiRequest';
 
 const mapStateToProps = states => ({ products: states.productReducer.products});
@@ -26,9 +26,7 @@ const Home = connect(
                     keyExtractor={item => item.id}
                     renderItem={({ item }) => {
                         return (
-                            <View>
-                                <Text>{item.title}</Text>
-                            </View>
+                            <ProductCards products={item} />
                         );
                     }}
                 />

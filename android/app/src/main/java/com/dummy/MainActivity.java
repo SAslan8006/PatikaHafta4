@@ -3,7 +3,7 @@ import android.os.Bundle;
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
-
+import com.airbnb.android.react.lottie.LottiePackage; //Lotte package
 public class MainActivity extends ReactActivity {
 
   /**

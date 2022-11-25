@@ -11,7 +11,7 @@ const ProductCards = ({ products, onPress }) => {
                         <Text style={styles.title}>{products.title}</Text>
                         <Text style={styles.rate}>{products.rating}</Text>
                     </View>
-                    <Text style={styles.price}>{products.price}</Text>
+                    <Text style={styles.price}>{products.price} ₺</Text>
                 </View>
             </View>
         </TouchableOpacity>
