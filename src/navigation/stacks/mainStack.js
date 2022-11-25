@@ -3,7 +3,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Home from '~/screens/Home';
 import Products from '~/screens/Products';
-import category from '~/screens/Categories'
+import category from '~/screens/Categories';
+import Detail from '~/screens/Details';
+
 import { connect } from 'react-redux';
 import { logoutUserWithFB } from '~/redux/actions/app';
 
@@ -29,9 +31,9 @@ const MainStack = connect(
       }} component={Products}
       />
       <Stack.Screen name="Detail" options={{
-        headerShown: true, title: 'Home', headerTitleAlign: 'center', headerRight: () => (
+        headerShown: true, title: 'Detail', headerTitleAlign: 'center', headerRight: () => (
           <Icon name="logout" size={28} onPress={() => dispatch(logoutUserWithFB())} />),
-      }} component={Home}
+      }} component={Detail}
       />
     </Stack.Navigator>
   );
