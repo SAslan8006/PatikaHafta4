@@ -1,11 +1,13 @@
 import { Dimensions, StyleSheet } from "react-native";
+
 const height = Dimensions.get("window").height;
 const width = Dimensions.get("window").width;
 
 export default StyleSheet.create({
     container: {
         borderWidth: 1,
-        margin: 10,
+        marginVertical: height * 0.015,
+        marginHorizontal: width * 0.05,
         borderColor: "#bdbdbd",
         backgroundColor: "#e0e0e0",
         flexDirection: "row",
@@ -14,8 +16,8 @@ export default StyleSheet.create({
 
     },
     image: {
-        width: 100,
-        minHeight: 100,
+        width: width * 0.25,
+        minHeight: height * 0.1375,
         resizeMode: "contain",
         backgroundColor: "white",
         borderRadius: 5,
@@ -23,14 +25,20 @@ export default StyleSheet.create({
     },
     body_container: {
         flex: 1,
-        padding: 5,
-        height: height * 0.1,
+        paddingVertical: height * 0.01,
+        paddingHorizontal: width * 0.025,
+        justifyContent: "space-between",
 
+    },
+    header: {
+        flexDirection: "row",
+        minHeight: height * 0.07,
     },
     title: {
         fontSize: 18,
         fontWeight: "bold",
         color: "black",
+        flex: 3,
         // top kullanılacak
 
     },
@@ -38,12 +46,14 @@ export default StyleSheet.create({
         textAlign: "right",
         fontSize: 16,
         fontStyle: "italic",
-        color: "black"
+        color: "black",
     },
     rate: {
         fontWeight: "bold",
         color: "green",
-        fontSize: 16
+        fontSize: 16,
+        flex: 1,
+        textAlign: "right",
     },
 
 });

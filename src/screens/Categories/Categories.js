@@ -4,12 +4,12 @@ import useFetch from '~/api/hooks/useFetch';
 import CategoryCards from "~/components/Card/CategoryCards";
 import Loading from "~/components/Loading";
 import SearchBar from "~/components/SearchBar";
+import styles from "./Categories.style";
 
 const Categories = ({ navigation }) => {
     const { data, loading } = useFetch("https://dummyjson.com/products/categories")
 
-    const [list, setList] = useState(data);
-
+    const [list, setList] = useState("");
     const renderCategories = ({ item }) => <CategoryCards categories={item} onClick={() => handleOnClick(item)} />
 
 
@@ -17,27 +17,24 @@ const Categories = ({ navigation }) => {
         navigation.navigate("Products", { category });
 
     }
-    
-    const handleSearch = text => {
-        const filterCategories = data.filter(category => {
-            const searchedText = text.toLowerCase();
-            const currentCategoryName = category.toLowerCase();
-            return currentCategoryName.indexOf(searchedText) > -1
-        });
-        setList(filterCategories)
-    }
+   
+    const filterCategories = data.filter((category) =>
+        `${category}`.toLowerCase().includes(list.toLowerCase()))
+
 
     if (data.length == 0) {
         return <Loading />
     }
 
     return (
-        <View>
-            <SearchBar setText={handleSearch} />
-            <FlatList
-                data={list}
+        <View >
+            <SearchBar setText={setList} />
+            <View style={styles.container}>
+                <FlatList style={styles.container}
+                    data={filterCategories}
                 renderItem={renderCategories}
             />
+            </View>
         </View>
     )
 }

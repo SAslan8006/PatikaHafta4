@@ -1,12 +1,13 @@
 import { Text, TouchableWithoutFeedback, View } from 'react-native';
 import styles from "./CategoryCards.style";
 
-const CategoryCards = ({ products, onClick }) => {
+const CategoryCards = ({ categories, onClick }) => {
+    console.log("category card:", categories);
     return (
         <TouchableWithoutFeedback onPress={onClick}>
             <View style={styles.container}>
                 <View style={styles.body_container}>
-                    <Text style={styles.title}>{products}</Text>
+                    <Text style={styles.title}>{categories}</Text>
                 </View>
             </View>
         </TouchableWithoutFeedback>
