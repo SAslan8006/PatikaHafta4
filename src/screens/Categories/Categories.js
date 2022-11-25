@@ -12,8 +12,8 @@ const Categories = ({ navigation }) => {
 
     const renderProducts = ({ item }) => <CategoryCards products={item} onClick={onClick} />
 
-    const onClick = () => {
-        navigation.navigate("Products");
+    const onClick = (category) => {
+        navigation.navigate("Products",{category});
     }
     const handleSearch = text => {
         const filterCategories = data.filter(category => {
