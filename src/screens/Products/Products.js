@@ -5,6 +5,7 @@ import Loading from '~/components/Loading';
 
 const Products = ({ route }) => {
     const category = route.params.category;
+    console.log(category);
 
     const { data, loading } = useFetch("https://dummyjson.com/products/category/" + category);
 
