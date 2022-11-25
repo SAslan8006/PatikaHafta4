@@ -3,13 +3,21 @@ import useFetch from '~/api/hooks/useFetch';
 import ProductCards from '~/components/Card/ProductCards';
 import Loading from '~/components/Loading';
 
-const Products = ({ route }) => {
+const Products = ({ route, navigation }) => {
     const category = route.params.category;
-    console.log(category);
 
     const { data, loading } = useFetch("https://dummyjson.com/products/category/" + category);
 
-    const renderProducts = ({ item }) => <ProductCards products={item} />
+
+    const renderProducts = ({ item }) => <ProductCards products={item} onPress={() => handleOnPress(item)} />
+
+    const handleOnPress = (product) => {
+        navigation.navigate("Details", product);
+    }
+
+
+
+
 
     if (data.length == 0) {
         return <Loading />
