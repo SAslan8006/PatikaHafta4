@@ -12,9 +12,8 @@ const Products = ({ route, navigation }) => {
     const renderProducts = ({ item }) => <ProductCards products={item} onPress={() => handleOnPress(item)} />
 
     const handleOnPress = (product) => {
-        navigation.navigate("Details", product);
+        navigation.navigate("Detail", product);
     }
-
 
     if (data.length == 0) {
         return <Loading />
