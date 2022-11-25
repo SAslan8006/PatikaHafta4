@@ -10,11 +10,14 @@ const Categories = ({ navigation }) => {
 
     const [list, setList] = useState(data);
 
-    const renderProducts = ({ item }) => <CategoryCards products={item} onClick={onClick} />
+    const renderCategories = ({ item }) => <CategoryCards categories={item} onClick={() => handleOnClick(item)} />
 
-    const onClick = (category) => {
-        navigation.navigate("Products",{category});
+
+    const handleOnClick = (category) => {
+        navigation.navigate("Products", { category });
+
     }
+    
     const handleSearch = text => {
         const filterCategories = data.filter(category => {
             const searchedText = text.toLowerCase();
@@ -33,7 +36,7 @@ const Categories = ({ navigation }) => {
             <SearchBar setText={handleSearch} />
             <FlatList
                 data={list}
-                renderItem={renderProducts}
+                renderItem={renderCategories}
             />
         </View>
     )
