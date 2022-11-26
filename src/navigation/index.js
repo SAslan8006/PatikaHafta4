@@ -1,4 +1,4 @@
-import React, { useMemo,useState,useEffect } from 'react';
+import React, { useMemo } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 
 import { LoginStack } from '~/navigation/stacks/loginStack';

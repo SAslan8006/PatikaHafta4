@@ -1,59 +1,82 @@
-import { Dimensions, StyleSheet } from "react-native";
+import { Dimensions, StyleSheet } from 'react-native';
+import { colors } from '~/themes';
+import { text, spacing } from '~/configs';
+import { color } from 'react-native-reanimated';
 
-const height = Dimensions.get("window").height;
-const width = Dimensions.get("window").width;
+const height = Dimensions.get('window').height;
+const width = Dimensions.get('window').width;
 
 export default StyleSheet.create({
-    container: {
-        borderWidth: 1,
-        marginVertical: height * 0.015,
-        marginHorizontal: width * 0.05,
-        borderColor: "#bdbdbd",
-        backgroundColor: "#e0e0e0",
-        flexDirection: "row",
-        borderRadius: 5,
-
-
-    },
-    image: {
-        width: width * 0.25,
-        minHeight: height * 0.1375,
-        resizeMode: "contain",
-        backgroundColor: "white",
-        borderRadius: 5,
-
-    },
-    body_container: {
-        flex: 1,
-        paddingVertical: height * 0.01,
-        paddingHorizontal: width * 0.025,
-        justifyContent: "space-between",
-
-    },
-    header: {
-        flexDirection: "row",
-        minHeight: height * 0.07,
-    },
-    title: {
-        fontSize: 18,
-        fontWeight: "bold",
-        color: "black",
-        flex: 3,
-        // top kullanılacak
-
-    },
-    price: {
-        textAlign: "right",
-        fontSize: 16,
-        fontStyle: "italic",
-        color: "black",
-    },
-    rate: {
-        fontWeight: "bold",
-        color: "green",
-        fontSize: 16,
-        flex: 1,
-        textAlign: "right",
-    },
-
+  container: {
+    padding: 5,
+    margin: 5,
+  },
+  title: {
+    fontSize: text.H4,
+    fontWeight: 'bold',
+  },
+  brand: {
+    fontSize: text.H3,
+    fontStyle: 'italic',
+    fontWeight: 'bold',
+  },
+  subcontainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: 10,
+  },
+  ratingcontainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  rating: {
+    color: 'black',
+  },
+  stockcontainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    borderRadius: 5,
+    backgroundColor: '#B1D7B4',
+    padding: 5,
+  },
+  stock: {},
+  descriptioncontainer: {padding: 10,},
+  description: {
+    fontStyle: 'italic',
+    fontWeight: 'bold',
+    margin: 10,
+  },
+  cartcard: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingTop: height * 0.15,
+    margin: 5,
+  },
+  pricecontainer: { flexDirection: 'row' },
+  priceWd : {
+    textDecorationLine: 'line-through',
+    fontSize: text.H3,
+  },
+  discount: {
+    fontSize: text.H2,
+    fontStyle: 'italic',
+    fontWeight: 'bold',
+    color: 'red',
+  },
+  price: {
+    color: 'black',
+    fontSize: text.H6,
+    justifyContent: 'center',
+    textAlign: 'center',
+  },
+  cart: {
+    backgroundColor: colors.orange,
+    padding: 10,
+    borderRadius: 10,
+  },
+  cartText: {
+    color: 'black',
+  },
 });

@@ -1,13 +1,13 @@
-import {TextInput, View} from 'react-native';
+import { TextInput, View } from 'react-native';
 import React from 'react';
 import styles from './Input.styles';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const Input = ({ placeholder, value, onChangeText, iconName, isSecure}) => {
+const Input = ({ placeholder, value, onChangeText, iconName, isSecure }) => {
   return (
     <View style={styles.container}>
       <TextInput
-        autoCapitalize='none'
+        autoCapitalize="none"
         style={styles.input}
         placeholder={placeholder}
         onChangeText={onChangeText}

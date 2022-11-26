@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Image, TouchableOpacity } from 'react-native';
+import { View, Image } from 'react-native';
 
 import { connect } from 'react-redux';
 
@@ -13,33 +13,34 @@ const mapStateToProps = states => ({ app: states.app });
 const mapDispatchToProps = dispatch => ({ dispatch });
 
 const Login = connect(
-    mapStateToProps,
-    mapDispatchToProps,
+  mapStateToProps,
+  mapDispatchToProps,
 )(props => {
-    const { dispatch, app } = props;
-    return (
-        <View style={styles.container}>
-            <View style={styles.body_container}>
-                <Image source={require('~/assets/logo.png') } style={styles.logo} />
-                <Input 
-                    placeholder="e-mail"
-                    keyboardType="email-address"
-                    value={app.username}
-                    onChangeText={d => dispatch(setApp('username', d))}
-                />
-                <Input    
-                    placeholder="password"                
-                    isSecure
-                    value={app.password}
-                    onChangeText={d => dispatch(setApp('password', d))}
-                />
-            </View>
-            <Button text="Login" onPress={() => dispatch(loginUserWithFB())} />
-            <Button text="Sign Up" onPress={() => dispatch(createUserWithFB())} />
+  const { dispatch, app } = props;
+  return (
+    <View style={styles.container}>
+      <View style={styles.body_container}>
+        <Image source={require('~/assets/logo.png')} style={styles.logo} />
+        <Input
+          placeholder="Enter e-mail..."
+          keyboardType="email-address"
+          value={app.username}
+          onChangeText={d => dispatch(setApp('username', d))}
+        />
+        <Input
+          placeholder="Enter password..."
+          isSecure
+          value={app.password}
+          onChangeText={d => dispatch(setApp('password', d))}
+        />
+      </View>
+      <Button icon="login" text="Login" onPress={() => dispatch(loginUserWithFB())} />
+      <Button icon="account-plus-outline" text="Sign Up" onPress={() => dispatch(createUserWithFB())} />
 
-            {app.loginLoading && <Text>LOADING LOADING</Text>}
-        </View>
-    );
+      {/* Loaading logo if user wait due to internet connection issue */}
+      {app.loginLoading}
+    </View>
+  );
 });
 
-export default Login ;
+export default Login;

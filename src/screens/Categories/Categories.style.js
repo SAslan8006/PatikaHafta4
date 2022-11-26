@@ -1,7 +1,11 @@
 import { StyleSheet } from 'react-native';
+import { colors } from '~/themes';
 
 export default StyleSheet.create({
-    container: {
-        marginBottom:80
-    }
+  basecontainer: {
+    backgroundColor: colors.aqua,
+  },
+  container: {
+    marginBottom: 80,
+},
 });

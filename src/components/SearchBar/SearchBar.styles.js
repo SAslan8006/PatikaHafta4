@@ -1,18 +1,18 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Platform } from 'react-native';
+import { colors } from '~/themes';
 
 export default StyleSheet.create({
-    container: {
-        padding: 8,
-        margin: 5,
-        borderRadius: 5,
-        backgroundColor: "#eceff1",
-
-    },
-    searchTitle: {
-        color: "black",
-        borderWidth: 1,
-        borderColor: "grey",
-        borderRadius:5,
-
-    }
+  container: {
+    padding: 5,
+    margin: 5,
+    borderRadius: 5,
+    backgroundColor: colors.white,
+  },
+  searchTitle: {
+    color: 'black',
+    borderWidth: 0.5,
+    borderColor: colors.orange,
+    borderRadius: 5,
+    padding: Platform.OS === 'android' ? 0 : 5,
+  },
 });
